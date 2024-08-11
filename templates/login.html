@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+        <script src="/js/bootstrap.js"></script>
+    </head>
+    <body>
+        <br>
+            <form method="POST" action="{{ url_for('login')}}"> <!-- change url to index after postgres -->
+                <div class="container py-5 h-100">
+                <label class="form-label" for="username">Username</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="username"><br>
+                <label class="form-label" for="password">password</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="password"><br>
+                <input type="submit" class="btn btn-primary active" value="login">
+                </div>
+            </form>
+    </body>
+</html>
