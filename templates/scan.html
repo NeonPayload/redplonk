@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}RedPlonk{% endblock %}
+
+{% block content %}
+
+<h2> Create user </h2>
+<form action="{{ url_for('scan') }}" method="POST" enctype="multipart/form-data">
+    <p>Text file list of hosts</p>
+    <input type="radio" name="scan_type" placeholder="host_type" value="list">
+    <input type="file" name="scan_item_list" placeholder="scan_item_list" >
+    <input type="submit" value="scan">
+</form>
+
+{% endblock %}

@@ -5,4 +5,39 @@
 {% block content %}
 <a href="#" class="btn btn-primary">button text</a>
 
+{% if hosts|length < 1 %}
+    <h4> there are no hosts in DB</h4>
+    {% else %}
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>hostname</th>
+            <th>IP</th>
+            <th>ports</th>
+            <th>vulns</th>
+            <th>shodan</th>
+            <th>whois</th>
+            <th>internetdb</th>
+        </tr>
+        {% for host in hosts %}
+        <tr>
+            <td>{{ host.uid }}</td>
+            <td>{{ host.hostname }}</td>
+            <td>{{ host.ip_address }}</td>
+            <td>{{ host.ports }}</td>
+            <td>{{ host.vulns }}</td>
+            <td>{{ host.shodan }}</td>
+            <td>{{ host.whois }}</td>
+            <td>{{ host.internetdb }}</td>
+
+            <td>
+                <a href="/delete/{{host.uid}}">delete</a>
+                <br>
+                <a href="/update/{{host.uid}}">update</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+
 {% endblock %}
